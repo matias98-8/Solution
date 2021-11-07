@@ -1,0 +1,98 @@
+
+    <div class="hero is-fullheight is-primary">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <div class="column is-8 is-offset-2">
+                <h3 class="title has-text-white"></h3>
+                <hr class="login-hr">  
+                <!--caja y logo-->
+                <div class="box">
+                    <div class="box">
+                      <h3>Aqui va el logo</h3>
+                    </div>
+                    
+                    <section class="section">
+                    <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+    
+     
+                    <!--Comienzo del email-->
+                      <div class="field">
+                        <label class="label"></label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input 
+                          class="input"
+                          [class.is-danger]="emailFieldIsInvalid"
+                          [class.is-success]="emailFieldIsValid"
+                          type="email" 
+                          formControlName="email"
+                          placeholder="Email" />
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-at"></i>
+                          </span>
+                          <span *ngIf="emailFieldIsInvalid" class="icon is-small is-right">
+                          
+                            <i class="fas fa-times"></i>
+                          </span>
+                          <span *ngIf="emailFieldIsValid" class="icon is-small is-right">
+                          <i class="fas fa-check"></i> 
+                            
+                          </span>
+                        </div>
+                      
+                         <div *ngIf="emailField.errors && emailField.touched">
+                      <p *ngIf="emailField.hasError('required')">
+                        Es un campo requerido
+                      </p>
+                      <p *ngIf="emailField.hasError('email')">
+                        No es un email
+                      </p>
+                    </div>
+                      </div>
+                      <!--Comienzo de contraseña-->
+                      <div class="field">
+                        <p class="control has-icons-left">
+                          <input
+                          class="input"
+                          type="password"
+                          placeholder="Contraseña"
+                          formControlName="password">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                        </p>
+                      </div>
+
+
+                      <!--Boton de Guardar-->
+                      <div class="field is-grouped">
+                        <div class="control">
+                          <button class="button is-primary" type="submit">Guardar</button>
+                        </div>
+                        <div class="control">
+                          <button class="button is-light" type="reset">Cancelar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </section>
+
+
+
+
+
+
+            
+                </div>
+
+                  
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    
+
