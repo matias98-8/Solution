@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
+import { RegistrarComponent } from './Screens/registrar/registrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
