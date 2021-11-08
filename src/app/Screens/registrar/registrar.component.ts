@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormBuilder,FormGroup, Validators } from '@angular/forms';
+import { pipe } from 'rxjs';
+
+import {debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-registrar',
@@ -7,9 +11,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarComponent implements OnInit {
 
-  constructor() { }
 
+  form: FormGroup;
+  constructor(private formBuilder: FormBuilder) {
+    this.buildForm();
+  }
+  
   ngOnInit(): void {
   }
 
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      name: ['',  [Validators.required]],
+      date: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      text: ['', [Validators.required, Validators.maxLength(110)]],
+      category: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
+    });
+
+    //this.form.valueChanges
+    //  .pipe(
+    //  debounceTime(500)
+    //)
+    //.subscribe(value => {
+    //  console.log(value);
+    //});
+  }
+
+  save(event: Event) {
+    event.preventDefault();
+    if (this.form.valid) {
+      const value = this.form.value;
+      console.log(value);
+    } else {
+      this.form.markAllAsTouched();
+    }
+  }
+
+  get emailField(){
+    return this.form.get('email');
+  }
+
+  get emailFieldIsInvalid(){
+    return this.emailField.touched && this.emailField.invalid;
+  }
+
+
+  get emailFieldIsValid(){
+    return this.emailField.touched && this.emailField.valid;
+  }
+  
+doSomething() {
+  console.log('click');
+}
+  
 }
