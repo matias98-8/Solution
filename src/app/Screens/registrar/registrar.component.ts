@@ -25,7 +25,6 @@ export class RegistrarComponent implements OnInit {
       name: ['',  [Validators.required]],
       date: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      text: ['', [Validators.required, Validators.maxLength(110)]],
       category: ['', [Validators.required]],
       gender: ['', [Validators.required]],
     });
