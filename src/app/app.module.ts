@@ -22,7 +22,6 @@ import { UserService } from './service/user/user.service';
     RegistrarComponent,
     InicioClienteComponent,
     CasoDevolucionComponent,
-    UserService
    
   ],
   imports: [
