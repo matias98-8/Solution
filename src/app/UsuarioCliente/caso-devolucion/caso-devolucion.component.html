@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-md is-primary navbar-light " > 
+    <div class="container-fluid">
+         <a href="InicioCliente" class="navbar-brand">SolutionConnection</a>
+         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div id="MenuNavegacion" class="collapse navbar-collapse">
+           <ul class="navbar-nav ms">
+             <li class="nav-item"><a class="nav-link" href="#">Mis Devoluciones</a></li>
+             
+           </ul>
+           <ul class="navbar-nav ml-auto " >
+             <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Cerrar Cesión</a></li>
+             
+           </ul>
+
+         </div>
+
+       </div>
+</nav>
+
+
+
+<section class="hero ">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+             Proceso de Devolución
+        </h1>
+        <h2 class="subtitle">
+         Rellene con la información
+        </h2>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <section class="section">
+      <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+        <div class="field">
+          <label class="label">Tienda:</label>
+          <div class="control has-icons-left has-icons-right">
+            <div class="select">
+            <span class="icon is-small is-left">
+              <i class="fas fa-store"></i>
+            </span>
+              <select formControlName="tienda">
+                <option value="1">Paris</option>
+                <option value="2">Ripley</option>
+                <option value="3">Falabella</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label">Tipo de Producto:</label>
+          <div class="control has-icons-left">
+            <div class="select">
+            <span class="icon is-small is-left">
+              <i class="fas fa-shopping-bag"></i>
+            </span>
+              <select formControlName="tipoproducto" >
+                <option value="1">Electronica</option>
+                <option value="2">Moda</option>
+                <option value="3">Hogar</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      
+      <div class="field">
+          <label class="label">Motivo de Devolución:</label>
+          <div class="control has-icons-left">
+            <div class="select">
+            <span class="icon is-small is-left">
+              <i class="fas fa-exchange-alt"></i>
+            </span>
+              <select formControlName="motivodedevolucion" >
+                <option value="1">Electronica</option>
+                <option value="2">Moda</option>
+                <option value="3">Hogar</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+       
+        <div class="field">
+          <label class="label">Categoria:</label>
+          <div class="control">
+            <div class="select">
+              <select formControlName="category">
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Genero:</label>
+          <div class="control">
+            <label class="radio">
+              <input
+                type="radio"
+                name="gender"
+                formControlName="gender"
+                value="male"
+              />
+              Hombre
+            </label>
+            <label class="radio">
+              <input
+                type="radio"
+                name="gender"
+                formControlName="gender"
+                value="female"
+              />
+              Mujer
+            </label>
+            <label class="radio">
+              <input
+                type="radio"
+                name="gender"
+                formControlName="gender"
+                value="other"
+              />
+              Otro
+            </label>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary" type="submit">Guardar</button>
+          </div>
+          <div class="control">
+            <button class="button is-light" type="reset" routerLink="/inicio">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+ 
