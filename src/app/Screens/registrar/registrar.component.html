@@ -12,11 +12,13 @@
 </section>
 <div class="container">
   <section class="section">
-    <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+    <form [formGroup]="contactForm" novalidate (ngSubmit)="onSaveForm()"> 
       <div class="field">
-        <label class="label">Name</label>
+        <label class="label">Nombre</label> 
         <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" formControlName="name" />
+          <input class="input"
+           type="name" [(ngModel)]="login.name"
+            formControlName="name" />
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
@@ -24,12 +26,14 @@
             <i class="fas fa-check"></i>
           </span>
         </div>
-        <p class="help is-success">This username is available</p>
+        
       </div>
       <div class="field">
-        <label class="label">Fecha</label>
+        <label class="label">Fecha de Nacimiento</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input" type="date" formControlName="date" />
+          <input class="input" 
+          type="date" [(ngModel)]="login.date"
+           formControlName="date" />
           <span class="icon is-small is-left">
             <i class="fas fa-calendar-alt"></i>
           </span>
@@ -37,11 +41,8 @@
             <i class="fas fa-check"></i>
           </span>
         </div>
-        <p class="help is-success">This username is available</p>
+        
       </div>
-      <button class="button is-primary" type="button" (click)="doSomething()">
-        Action
-      </button>
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
@@ -49,30 +50,43 @@
           class="input"
           [class.is-danger]="emailFieldIsInvalid"
           [class.is-success]="emailFieldIsValid"
-           type="email" 
+           type="email" [(ngModel)]="login.email"
            formControlName="email" />
           <span class="icon is-small is-left">
             <i class="fas fa-at"></i>
           </span>
           <span *ngIf="emailFieldIsInvalid" class="icon is-small is-right">
-          
             <i class="fas fa-times"></i>
           </span>
           <span *ngIf="emailFieldIsValid" class="icon is-small is-right">
            <i class="fas fa-check"></i> 
-            
           </span>
+          
         </div>
-        <p class="help is-success">Success message</p>
-        <p class="help is-danger">Error message</p>
+     
       
       </div>
-     
+    
+      <div class="field">
+        <label class="label">Contraseña:</label>   
+        <p class="control has-icons-left">
+          <input
+          class="input"
+          type="password" [(ngModel)]="login.password"
+          placeholder="Contraseña"
+          formControlName="password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+
       <div class="field">
         <label class="label">Categoria:</label>
+        
         <div class="control">
           <div class="select">
-            <select formControlName="category">
+            <select formControlName="category" [(ngModel)]="login.category">
               <option value="1">Cliente</option>
               <option value="2">Tienda</option>
             </select>
@@ -85,6 +99,7 @@
           <label class="radio">
             <input
               type="radio"
+              [(ngModel)]="login.gender"
               name="gender"
               formControlName="gender"
               value="male"
@@ -113,7 +128,7 @@
       </div>
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-primary" type="submit">Guardar</button>
+          <button class="button is-primary" type="submit" (click)="loginUsuario()">Guardar</button>
         </div>
         <div class="control">
           <button class="button is-light" type="reset" routerLink="/inicio">Cancelar</button>

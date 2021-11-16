@@ -7,14 +7,14 @@ import { CasoDevolucionComponent } from './UsuarioCliente/caso-devolucion/caso-d
 
 
 const routes: Routes = [
-  //{ path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component:InicioComponent},
   { path: 'registrar', component: RegistrarComponent },
-  //{ path: '**', redirectTo: '/inicio' },
+  
   //inicio en cliente
   { path: 'InicioCliente', component: InicioClienteComponent },
-  { path: 'InicioCliente/CasoDevolución', component: CasoDevolucionComponent }
-  
+  { path: 'InicioCliente/CasoDevolución', component: CasoDevolucionComponent },
+  { path: '**', redirectTo: '/inicio' }
  
   
 ];
