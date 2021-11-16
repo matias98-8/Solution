@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './Screens/inicio/inicio.component';
 import { RegistrarComponent } from './Screens/registrar/registrar.component';
-import { InicioClienteComponent } from './UsuarioCliente/inicio-cliente/inicio-cliente.component';
-import { CasoDevolucionComponent } from './UsuarioCliente/caso-devolucion/caso-devolucion.component';
+import { InicioClienteComponent } from './Screens/UsuarioCliente/inicio-cliente/inicio-cliente.component';
+import { CasoDevolucionComponent } from './Screens/UsuarioCliente/caso-devolucion/caso-devolucion.component';
 import { UserService } from './service/user/user.service';
+import { InicioTiendaComponent } from './Screens/UsuarioTienda/inicio-tienda/inicio-tienda.component';
 
 
 
@@ -21,7 +22,8 @@ import { UserService } from './service/user/user.service';
     InicioComponent,
     RegistrarComponent,
     InicioClienteComponent,
-    CasoDevolucionComponent
+    CasoDevolucionComponent,
+    InicioTiendaComponent
    
   ],
   imports: [

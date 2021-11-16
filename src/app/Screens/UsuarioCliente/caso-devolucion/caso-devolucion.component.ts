@@ -24,8 +24,11 @@ export class CasoDevolucionComponent implements OnInit {
       tienda: ['',  [Validators.required]],
       tipoproducto: ['', [Validators.required]],
       motivodedevolucion: ['', [Validators.required]],
-      category: ['', [Validators.required]],
-      gender: ['', [Validators.required]],
+      text: ['', [Validators.required]],
+      metododevolucion: ['', [Validators.required]],
+      comuna: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
+      tipovivienda: ['', [Validators.required]],
     });
 
     //this.form.valueChanges

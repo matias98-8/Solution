@@ -84,53 +84,89 @@
             </div>
           </div>
         </div>
-        
-       
         <div class="field">
-          <label class="label">Categoria:</label>
+          <label class="label">Describa su Problema:</label>
           <div class="control">
+            <textarea
+              class="textarea"
+              cols="30"
+              rows="10"
+              formControlName="text"
+            ></textarea>
+            
+          </div>
+          
+          <!-- <div *ngIf="form.get('text').errors && form.get('text').touched">
+        <p *ngIf="form.get('text').hasError('required')">
+          Es un campo requerido
+        </p>
+        <p *ngIf="form.get('text').hasError('maxlength')">
+          Te pasaste, máximo deben haber 80 caracteres.
+        </p>
+      </div> -->
+        </div>
+        <div class="field">
+          <label class="label">Seleccionar Metodo de Devolución:</label>
+          <div class="control has-icons-left">
             <div class="select">
-              <select formControlName="category">
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
+            <span class="icon is-small is-left">
+              <i class="fas fa-exchange-alt"></i>
+            </span>
+              <select formControlName="metododevolucion" >
+                <option value="1">Envio</option>
+                <option value="2">Retiro</option>
+                
+              </select>
+            </div>
+          </div>
+        </div>
+        <h2 class="subtitle">
+          Dirección de retiro
+         </h2>
+         <div class="field">
+          <label class="label">Comuna:</label>
+          <div class="control has-icons-left">
+            <div class="select">
+            <span class="icon is-small is-left">
+              <i class="fas fa-globe"></i>
+            </span>
+              <select formControlName="comuna" >
+                <option value="1">Macul</option>
+                <option value="2">La florida</option>
+                
               </select>
             </div>
           </div>
         </div>
         <div class="field">
-          <label class="label">Genero:</label>
-          <div class="control">
-            <label class="radio">
-              <input
-                type="radio"
-                name="gender"
-                formControlName="gender"
-                value="male"
-              />
-              Hombre
-            </label>
-            <label class="radio">
-              <input
-                type="radio"
-                name="gender"
-                formControlName="gender"
-                value="female"
-              />
-              Mujer
-            </label>
-            <label class="radio">
-              <input
-                type="radio"
-                name="gender"
-                formControlName="gender"
-                value="other"
-              />
-              Otro
-            </label>
-          </div>
+          <label class="label">Dirección:</label>
+          <p class="control has-icons-left">
+            <input
+            class="input"
+            type="direccion"
+            placeholder="Dirección"
+            formControlName="direccion">
+            <span class="icon is-small is-left">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </p>
         </div>
+        <div class="field">
+          <label class="label">Tipo de Vivienda:</label>
+          <p class="control has-icons-left">
+            <input
+            class="input"
+            type="tipovivienda"
+            placeholder="Indique: Casa, Depto, Condominio, etc"
+            formControlName="tipovivienda">
+            <span class="icon is-small is-left">
+              <i class="fas fa-home"></i>
+            </span>
+          </p>
+        </div>
+       
         <div class="field is-grouped">
+          
           <div class="control">
             <button class="button is-primary" type="submit">Guardar</button>
           </div>

@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegistrarComponent } from './Screens/registrar/registrar.component';
 import { InicioComponent } from './Screens/inicio/inicio.component';
-import { InicioClienteComponent } from './UsuarioCliente/inicio-cliente/inicio-cliente.component';
-import { CasoDevolucionComponent } from './UsuarioCliente/caso-devolucion/caso-devolucion.component';
+import { InicioClienteComponent } from './Screens/UsuarioCliente/inicio-cliente/inicio-cliente.component';
+import { CasoDevolucionComponent } from './Screens/UsuarioCliente/caso-devolucion/caso-devolucion.component';
+import { InicioTiendaComponent } from './Screens/UsuarioTienda/inicio-tienda/inicio-tienda.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
   //inicio en cliente
   { path: 'InicioCliente', component: InicioClienteComponent },
   { path: 'InicioCliente/CasoDevolución', component: CasoDevolucionComponent },
+  { path: 'Inicio', component: InicioClienteComponent },
+  { path: 'InicioTienda', component: InicioTiendaComponent },
   { path: '**', redirectTo: '/inicio' }
  
   
